@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = 587;                                    // TCP port to connect to, use 587 for TLS
         
         //Recipients
-        $mail->setFrom('kumaraguru@mosaique.link', 'Karthick Karthick'); // Use your authenticated email
+        $mail->setFrom('kumaraguru@mosaique.link',$name); // Use your authenticated email
         $mail->addAddress('kumar1@mosaique.link');                 // Add a recipient
         $mail->addReplyTo($email, $name . ' ' . $surname);             // Add the user's email as the Reply-To address
         
