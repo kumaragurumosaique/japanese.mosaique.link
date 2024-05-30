@@ -67,7 +67,7 @@
         loop:true,
         dots: true,
         nav: true,
-        autoplay: true,
+        autoplay: false,
         margin:30,
           responsive:{
               0:{
