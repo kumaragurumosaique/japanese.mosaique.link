@@ -874,7 +874,7 @@ Banner Style
 
 .main-banner:after {
   content: '';
-  background-image: url(../images/baner-dec-left.png);
+  background-image: url(../images/header-nihon-1.png);
   background-repeat: no-repeat;
   position: absolute;
   left: 0;
@@ -985,7 +985,7 @@ Services Style
 .our-services .services-left-dec img {
   width: 387px;
   height: 638px;
-  left: -80px;
+right: 0px;
   top: -140px;
   position: absolute;
   z-index: 1;
@@ -994,8 +994,8 @@ Services Style
 .our-services .services-right-dec img {
   width: 305px;
   height: 305px;
-  right: 25px;
-  bottom: -120px;
+  left: 20px;
+  bottom: -100px;
   position: absolute;
   z-index: 1;
 }
