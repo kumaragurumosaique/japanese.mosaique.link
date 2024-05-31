@@ -221,7 +221,7 @@ body {
 
 .main-blue-button-hover a {
   display: inline-block;
-  background-color: #03a4ed;
+  background-color: #ed1a03;
   font-size: 15px;
   font-weight: 400;
   color: #fff;
@@ -233,7 +233,9 @@ body {
 }
 
 .main-blue-button-hover a:hover {
-  background-color: #ff695f;
+  background-color: #faf6f6;
+  border: 2px solid #000000;
+  color: #ed1a03;
 }
 
 .main-red-button a {
@@ -262,7 +264,7 @@ body {
 }
 
 .main-red-button-hover a:hover {
-  background-color: #03a4ed;
+  background-color: #000000;
 }
 
 .main-white-button a {
@@ -388,7 +390,7 @@ header
 
 .header-area .main-nav .nav li:last-child .main-red-button-hover a:hover,
 .background-header .main-nav .nav li:last-child .main-red-button-hover a:hover {
-  background-color: #03a4ed !important;
+  background-color: #030303 !important;
 }
 
 .header-area .main-nav .nav li a {
@@ -927,7 +929,9 @@ Banner Style
 }
 
 .main-banner .item .down-buttons {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
 }
 
 .main-banner .item .down-buttons .call-button i {
@@ -1027,6 +1031,7 @@ right: 0px;
   background-color: #fff;
   padding: 30px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.05);
+  height: 350px !important;
 }
 
 .our-services .item h4 {
@@ -1121,7 +1126,19 @@ About
   border-top: 1px solid #eee;
 }
 
-
+.img-kpr{
+  height: 50px;
+  width: 200px;
+}
+.college-content-3{
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.college-content-2{
+  border-radius: 30px;
+  box-shadow: rgba(155, 53, 53, 0.35) 0px 5px 15px;
+}
 /* 
 ---------------------------------------------
 Portfolio
@@ -1291,110 +1308,7 @@ Portfolio
   height: 10px;
 }
 
-/* 
----------------------------------------------
-Pricing
---------------------------------------------- 
-*/
 
-.pricing-tables .tables-left-dec img {
-  width: 418px;
-  height: 851px;
-  left: 0;
-  top: 120px;
-  position: absolute;
-  z-index: 1;
-}
-
-.pricing-tables .tables-right-dec img {
-  width: 359px;
-  height: 848px;
-  right: 0;
-  top: 45px;
-  position: absolute;
-  z-index: 1
-}
-
-.pricing-tables {
-  z-index: 2;
-  position: relative;
-  padding-top: 120px;
-  margin-top: 0px;
-}
-
-.pricing-tables .section-heading {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.pricing-tables .section-heading h2 {
-  text-align: center;
-  margin: 0px 60px 0px 60px;
-  margin-bottom: -5px;
-  position: relative;
-  z-index: 1;
-}
-
-.pricing-tables .item {
-  position: relative;
-  z-index: 2;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 60px;
-  text-align: center;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-  border-radius: 45px;
-}
-
-.pricing-tables .item h4 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #2a2a2a;
-}
-
-.pricing-tables .item em {
-  color: #ff695f;
-  font-size: 15px;
-  display: block;
-  margin-top: 25px;
-  text-decoration: line-through;
-  font-style: normal;
-}
-
-.pricing-tables .item span {
-  font-size: 44px;
-  color: #ff695f;
-  font-weight: 700;
-  display: block;
-  margin-top: -5px;
-}
-
-.pricing-tables .item ul {
-  margin-top: 30px;
-}
-
-.pricing-tables .item ul li {
-  display: block;
-  font-size: 15px;
-  color: #7a7a7a;
-  margin-bottom: 20px;
-}
-
-.pricing-tables .item .main-blue-button {
-  margin-top: 40px;
-}
-
-.pricing-tables .first-item {
-  background-image: url(../images/first-plan-bg.png);
-}
-
-.pricing-tables .second-item {
-  background-image: url(../images/second-plan-bg.png);
-}
-
-.pricing-tables .third-item {
-  background-image: url(../images/third-plan-bg.png);
-}
 
 
 /* 
@@ -1402,7 +1316,14 @@ Pricing
 contact
 --------------------------------------------- 
 */
-
+.phone-container {
+  text-align: center;
+}
+.copy-feedback {
+  font-size: 14px;
+  color: green;
+  margin-left: 80px;
+}
 .contact-dec img {
   position: absolute;
   z-index: 1;
@@ -1410,6 +1331,13 @@ contact
   height: 702px;
   right: 0;
   bottom: -400px;
+}
+#phone-number {
+  font-size: 14px;
+  cursor: pointer;
+  color: #ff5100;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .contact-left-dec img {
@@ -1448,7 +1376,8 @@ contact
 
 .contact-us .info span {
   opacity: 1;
-  display: inline-flex;
+  display: flex;
+  align-items: center;
   margin-right: 30px;
 }
 
@@ -1474,6 +1403,10 @@ contact
   font-weight: 400;
   line-height: 25px;
   text-transform: none;
+}
+.phone-flex{
+  display: flex;
+  flex-direction: column;
 }
 
 form#contact {
