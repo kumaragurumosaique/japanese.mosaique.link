@@ -6,12 +6,11 @@ use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
-    $surname = $_POST['surname'];
     $email = $_POST['email'];
-    $website = $_POST['website'];
+    $phone = $_POST['phoneNumber'];
 
     // Simple validation
-    if (empty($name) || empty($surname) || empty($email) || empty($website)) {
+    if (empty($name) || empty($email) || empty($phone)) {
         http_response_code(400);
         echo "Please fill in all fields.";
         exit;
@@ -32,8 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Recipients
         $mail->setFrom('kumaraguru@mosaique.link',$name); // Use your authenticated email
         $mail->addAddress('kumar1@mosaique.link');                 // Add a recipient
-        $mail->addReplyTo($email, $name . ' ' . $surname);             // Add the user's email as the Reply-To address
-        
+        $mail->addReplyTo($email, $name );             // Add the user's email as the Reply-To address
         // Content
         $mail->isHTML(true);                                       // Set email format to HTML
         $mail->Subject = 'New Contact Form Submission';
@@ -83,12 +81,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="content">
                         <p><strong>Name:</strong> ' . htmlspecialchars($name) . '</p>
-                        <p><strong>Surname:</strong> ' . htmlspecialchars($surname) . '</p>
                         <p><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>
-                        <p><strong>Website:</strong> ' . htmlspecialchars($website) . '</p>
+                        <p><strong>Phone:</strong> ' . htmlspecialchars($phone) . '</p>
                     </div>
                     <div class="footer">
-                        <p>This message was sent from your website contact form.</p>
+                        <p>This message was sent from your phone contact form.</p>
                     </div>
                 </div>
             </body>
