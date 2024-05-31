@@ -407,7 +407,7 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
       var responseMessage = document.getElementById("response-message");
   
       // Simple validation
-      if (name === "" || email === "" || website === "") {
+      if (name === "" || email === "" || name === "") {
           responseMessage.textContent = "Please fill in all fields.";
       } else {
           // Send form data to the server using AJAX
@@ -423,7 +423,7 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
                   }
               }
           };
-          xhr.send("name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&phoneNumber=" + encodeURIComponent(phone));
+          xhr.send("name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&phone=" + encodeURIComponent(phone));
       }
   });
 
