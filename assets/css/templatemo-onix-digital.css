@@ -1079,7 +1079,9 @@ About
   margin-top: 0px;
   padding-top: 120px;
 }
-
+.about-content{
+  text-align: justify;
+}
 .about-us .left-image {
   margin-right: 30px;
 }
