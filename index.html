@@ -175,9 +175,6 @@ https://templatemo.com/tm-565-onix-digital
               <div class="icon"><img src="assets/images/work-icon.png" alt=""></div>
               <p>Ease your Japan career journey. Expert services streamline your job hunt</p>
             </div>
-           
-            
-
           </div>
         </div>
       </div>
@@ -253,9 +250,12 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
               <div class="thumb">
                 <img src="assets/images/arjun.png" alt="">
                 <div class="hover-effect">
-                  <div class="inner-content">
+                  <div class="inner-content mt-3">
                     <a href="#"><h4>Arjun</h4></a>
                     <span>Production Engineer</span>
+                    <p class="alumini-content ms-3">
+                      I work in Takasaki City. Job responsibilities include planning production management, jig design, equipment maintenance, productivity improvement, factory safety, and participation in improvement meetings.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -266,9 +266,14 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
               <div class="thumb">
                 <img src="assets/images/revathi.png" alt="">
                 <div class="hover-effect">
-                  <div class="inner-content">
+                  <div class="inner-content mt-3">
                     <a href="#"><h4>Full-stack developer</h4></a>
                     <span>Revati</span>
+                    <p class="alumini-content ms-3">
+                      I work as a full stack engineer and manage a team in India as a bridge engineer. We also do marketing work using GA and Adobe campaigns.
+
+
+                    </p>
                   </div>
                 </div>
               </div>
@@ -277,9 +282,14 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
               <div class="thumb">
                 <img src="assets/images/tamil.png" alt="">
                 <div class="hover-effect">
-                  <div class="inner-content">
+                  <div class="inner-content mt-3">
                     <a href="#"><h4>Tamil</h4></a>
                     <span>Application Engineer</span>
+                    <p class="alumini-content ms-3">
+                      I am an application engineer at a Japanese mobility safety solution provider company, responsible for seat belt design, product evaluation, vehicle testing, certification, implementation, and ensuring safety equipment for mobility, including automobiles.
+
+
+                    </p>
                   </div>
                 </div>
               </div>
@@ -288,9 +298,12 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
               <div class="thumb">
                 <img src="assets/images/Visnu.png" alt="">
                 <div class="hover-effect">
-                  <div class="inner-content">
+                  <div class="inner-content mt-3">
                     <a href="#"><h4>Vishnu</h4></a>
                     <span>Server Engineer</span>
+                  <p class="alumini-content ms-3">
+                    I worked as a software engineer at MOSAIQUE for two years, and now as a DevOps engineer, I am responsible for maintaining the backend infrastructure of the world's largest apparel company.
+                  </p>
                   </div>
                 </div>
               </div>
@@ -328,26 +341,22 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <form id="contact" action="contact.php" method="post">
+          <form id="contact" action="send_mail.php" method="post">
             <div class="row">
                 <div class="col-lg-12">
                     <fieldset>
-                        <input type="text" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                        <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="on" required>
                     </fieldset>
                 </div>
-                <!-- <div class="col-lg-12">
-                    <fieldset>
-                        <input type="text" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
-                    </fieldset>
-                </div> -->
+              
                 <div class="col-lg-12">
                     <fieldset>
-                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
                     </fieldset>
                 </div>
                 <div class="col-lg-12">
                     <fieldset>
-                        <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone number" required>
+                        <input type="tel" name="message" id="message" placeholder="Your Message" required>
                     </fieldset>
                 </div>
                 <div class="col-lg-12">
@@ -357,7 +366,7 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
                 </div>
             </div>
         </form>
-        
+
         <div id="response-message"></div>
         
               
@@ -370,7 +379,70 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
     </div>
   </div>
 
+  <!-- <div class="contact-form">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
 
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div id="responseMessage"></div>
+</div> -->
+<style>
+  .contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+.contact-form h1 {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #218838;
+}
+
+#responseMessage {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #28a745;
+}
+</style>
   <footer>
     <div class="container">
       <div class="row">
@@ -397,75 +469,46 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/script.js"></script>
-  <script>
-    document.getElementById("contact").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
-      
-      var name = document.getElementById("name").value.trim();
-      var email = document.getElementById("email").value.trim();
-      var phone = document.getElementById("phoneNumber").value.trim();
-      var responseMessage = document.getElementById("response-message");
   
-      // Simple validation
-      if (name === "" || email === "" || name === "") {
-          responseMessage.textContent = "Please fill in all fields.";
-      } else {
-          // Send form data to the server using AJAX
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "send_mail.php", true);
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-              if (xhr.readyState === 4) {
-                  if (xhr.status === 200) {
-                      responseMessage.textContent = xhr.responseText;
-                  } else {
-                      responseMessage.textContent = "Error: " + xhr.status;
-                  }
-              }
-          };
-          xhr.send("name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&phone=" + encodeURIComponent(phone));
-      }
-  });
-
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', (event) => {
-          const phoneNumberElement = document.getElementById('phone-number');
-          const copyFeedback = document.getElementById('copy-feedback');
+  <!-- <script>
+    document.getElementById('contact').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        let formData = new FormData(this);
+    
+        fetch('send_mail.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('response-message').innerText = data;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+    
+</script>
+     -->
+     <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();
       
-          phoneNumberElement.addEventListener('click', () => {
-              const phoneNumber = phoneNumberElement.textContent;
-              
-              // Create a temporary textarea element to hold the phone number
-              const tempTextArea = document.createElement('textarea');
-              tempTextArea.value = phoneNumber;
-              document.body.appendChild(tempTextArea);
-              
-              // Select the text in the textarea
-              tempTextArea.select();
-              tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+          let formData = new FormData(this);
       
-              try {
-                  // Copy the text inside the textarea to the clipboard
-                  document.execCommand('copy');
-                  copyFeedback.textContent = 'copied to clipboard!';
-              } catch (err) {
-                  copyFeedback.textContent = 'Failed to copy phone number.';
-              }
-              
-              // Remove the temporary textarea
-              document.body.removeChild(tempTextArea);
-      
-              // Clear the feedback message after a few seconds
-              setTimeout(() => {
-                  copyFeedback.textContent = '';
-              }, 2000);
-          });
+          fetch('mail.php', {
+              method: 'POST',
+              body: formData
+          })
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('responseMessage').innerText = data;
+          })
+          .catch(error => console.error('Error:', error));
       });
       
   </script>
   <script>
-  // Acc
+
     $(document).on("click", ".naccs .menu div", function() {
       var numberIndex = $(this).index();
 

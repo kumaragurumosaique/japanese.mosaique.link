@@ -1198,14 +1198,19 @@ Portfolio
   bottom: -240px;
   right: 30px;
   width: 239px;
-  height: 210px;
+  height: 240px;
 }
 
 .our-portfolio .item .hover-effect .inner-content {
   position: absolute;
   right: 30px;
-  bottom: 30px;
+
   text-align: right;
+}
+.alumini-content{
+  font-size: 10px;
+  text-align: justify;
+  line-height: 20px;
 }
 
 .our-portfolio .item .hover-effect .inner-content h4 {
@@ -1319,6 +1324,13 @@ contact
 .phone-container {
   text-align: center;
 }
+
+     
+#response-message {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #28a745;
+}
 .copy-feedback {
   font-size: 14px;
   color: green;
@@ -1378,7 +1390,7 @@ contact
   opacity: 1;
   display: flex;
   align-items: center;
-  margin-right: 30px;
+  margin-right: 27px;
 }
 
 .contact-us .info span i {
