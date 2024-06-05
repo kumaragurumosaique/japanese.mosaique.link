@@ -341,7 +341,7 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <form id="contact" action="send_mail.php" method="post">
+          <form id="contact">
             <div class="row">
                 <div class="col-lg-12">
                     <fieldset>
@@ -356,7 +356,7 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
                 </div>
                 <div class="col-lg-12">
                     <fieldset>
-                        <input type="tel" name="message" id="message" placeholder="Your Message" required>
+                        <input type="tel" name="phone" id="phone" placeholder="Your Phone number" required>
                     </fieldset>
                 </div>
                 <div class="col-lg-12">
@@ -379,70 +379,8 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
     </div>
   </div>
 
-  <!-- <div class="contact-form">
-    <h1>Contact Us</h1>
-    <form id="contactForm">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+  
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Submit</button>
-    </form>
-    <div id="responseMessage"></div>
-</div> -->
-<style>
-  .contact-form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
-}
-
-.contact-form h1 {
-    margin-bottom: 20px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 10px;
-    background: #28a745;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    background: #218838;
-}
-
-#responseMessage {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #28a745;
-}
-</style>
   <footer>
     <div class="container">
       <div class="row">
@@ -467,8 +405,10 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/mail.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/script.js"></script>
+
   
   <!-- <script>
     document.getElementById('contact').addEventListener('submit', function(event) {
@@ -489,24 +429,7 @@ Join us at Mosaique and begin your exciting journey to a vibrant career in Japan
     
 </script>
      -->
-     <script>
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-      
-          let formData = new FormData(this);
-      
-          fetch('mail.php', {
-              method: 'POST',
-              body: formData
-          })
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('responseMessage').innerText = data;
-          })
-          .catch(error => console.error('Error:', error));
-      });
-      
-  </script>
+    
   <script>
 
     $(document).on("click", ".naccs .menu div", function() {

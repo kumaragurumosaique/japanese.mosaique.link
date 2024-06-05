@@ -1,42 +1,51 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
 require 'vendor/autoload.php';
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $phone = htmlspecialchars($_POST['phone']);
 
-    $mail = new PHPMailer(true);
-    try {
-        //Server settings
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';  // Set the SMTP server to send through
-        $mail->SMTPAuth = true;
-        $mail->Username = 'kumaraguru@mosaique.link'; // SMTP username
-        $mail->Password = 'your_smtp_password';   // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+    if (!empty($name) && !empty($email) && !empty($phone)) {
+        $mail = new PHPMailer(true);
 
-        //Recipients
-        $mail->setFrom('kumaraguru@mosaique.link', $name); // Use your authenticated email
-        $mail->addAddress('kumaraguru@mosaique.link');     // Add a recipient
-        $mail->addReplyTo($email, $name);                 // Add the user's email as the Reply-To address
+        try {
+            // Server settings
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'kumaraguru@mosaique.link';
+            $mail->Password = 'ehhhtwjmtpijbulr';  // Ensure this is your actual SMTP password or app-specific password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
-        // Content
-        $mail->isHTML(true);                              // Set email format to HTML
-        $mail->Subject = 'New Contact Form Submission';
-        $mail->Body    = "Name: $name<br>Email: $email<br>Message: $message";
+            // Recipients
+            $mail->setFrom('kumaraguru@mosaique.link', $name); // Use your authenticated email
+            $mail->addAddress('kumaraguru@mosaique.link'); 
 
-        $mail->send();
-        echo 'Thank you for contacting us!';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            // Content
+            $mail->isHTML(true);
+            $mail->Subject = 'New Contact Form Submission';
+            $mail->Body    = "Name: $name<br>Email: $email<br>Phone: $phone";
+
+            $mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    } else {
+        echo 'Please fill in all fields.';
     }
+} else {
+    echo 'Invalid request method.';
 }
+?>
