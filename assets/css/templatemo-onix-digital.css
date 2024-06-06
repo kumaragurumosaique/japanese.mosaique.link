@@ -1513,7 +1513,6 @@ Footer Style
 
 
 footer {
-  
   z-index: 2;
   position: relative;
 bottom: 10px;
@@ -1522,14 +1521,14 @@ bottom: 10px;
 footer .copyright p {
   text-align: center;
   border-top: 1px solid #eee;
-  color: #afafaf;
+  color: #000000;
   margin-top: 50px;
   padding: 20px 0px;
   font-weight: 300;
 }
 
 footer .copyright p a {
-  color: #ff695f;
+  color: #BC002D;
 }
 
 /* 
@@ -1548,6 +1547,13 @@ responsive
 }
 
 @media (max-width: 992px) {
+  .college-content-3{
+    display: flex;
+    flex-direction: row;
+  }
+  .counter-title{
+    font-size: 20px;
+  }
   .main-banner::before {
     display: none;
   }
@@ -1613,6 +1619,13 @@ responsive
 }
 
 @media (max-width: 767px) {
+  .img-kpr{
+    height: 40px;
+    width: 150px;
+  }
+  .counter-title{
+    font-size: 25px;
+  }
   .main-banner .item .down-buttons {
     display: inline-block;
   }
