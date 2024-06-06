@@ -21,7 +21,7 @@
 		loop:true,
 		dots: true,
 		nav: false,
-		autoplay: true,
+		autoplay: false,
 		margin:0,
 		  responsive:{
 			  0:{
@@ -181,3 +181,45 @@
 
 
 })(window.jQuery);
+let timers = {};
+
+function startCounter(counterId, maxCount) {
+    const counterElement = document.getElementById(`counter${counterId}`);
+    counterElement.textContent = '0'; // Reset counter to zero before starting
+    if (!timers[counterId]) {
+        timers[counterId] = setInterval(() => {
+            let currentValue = parseInt(counterElement.textContent);
+            currentValue += 1;
+            counterElement.textContent = currentValue;
+            if (currentValue >= maxCount) {
+                stopCounter(counterId);
+            }
+        }, 50);
+    }
+}
+
+function stopCounter(counterId) {
+    if (timers[counterId]) {
+        clearInterval(timers[counterId]);
+        delete timers[counterId];
+    }
+}
+
+// Intersection Observer setup
+let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounter(1, 40); // Stops at 20
+            startCounter(2, 7); // Stops at 30
+            startCounter(3, 5); // Stops at 25
+            startCounter(4, 100); // Stops at 15
+        }
+    });
+}, {
+    root: null, // observes in viewport
+    threshold: 0.5 // 50% of the item must be visible to trigger
+});
+
+// Target to observe
+let target = document.querySelector('.counter-section');
+observer.observe(target);
