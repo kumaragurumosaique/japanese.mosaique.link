@@ -5,6 +5,10 @@ require 'vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+header('Content-Type: application/json'); // Set header for JSON response
+
+$response = array(); // Initialize response array
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars(trim($_POST["name"]));
     $email = htmlspecialchars(trim($_POST["email"]));
@@ -29,19 +33,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Content
             $mail->isHTML(true); // Set email format to HTML
-            $mail->Subject = "Japanese Mosaique Website from $name";
+            $mail->Subject = "Contact Form Submission from $name";
             $mail->Body    = "<b>Name:</b> $name<br><b>Email:</b> $email<br><br><b>Message:</b><br>$message";
             $mail->AltBody = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
             $mail->send();
-            echo "Thank you for contacting us";
+            $response['status'] = 'success';
+            $response['message'] = "Thank you for contacting us, $name. We will get back to you shortly.";
         } catch (Exception $e) {
-            echo "There was an error sending your message. Mailer Error: {$mail->ErrorInfo}";
+            $response['status'] = 'error';
+            $response['message'] = "There was an error sending your message. Mailer Error: {$mail->ErrorInfo}";
         }
     } else {
-        echo "All fields are required!";
+        $response['status'] = 'error';
+        $response['message'] = "All fields are required!";
     }
 } else {
-    echo "Invalid request method!";
+    $response['status'] = 'error';
+    $response['message'] = "Invalid request method!";
 }
+
+echo json_encode($response); // Return JSON response
 ?>
