@@ -1513,6 +1513,7 @@ Footer Style
 
 
 footer {
+  
   z-index: 2;
   position: relative;
 bottom: 10px;

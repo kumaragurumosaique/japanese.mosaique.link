@@ -208,8 +208,8 @@ let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             startCounter(1, 40); // Stops at 20
-            startCounter(2, 20); // Stops at 30
-            startCounter(3, 5); // Stops at 25
+            startCounter(2, 7); // Stops at 30
+            startCounter(3, 20); // Stops at 25
             startCounter(4, 100); // Stops at 15
         }
     });
